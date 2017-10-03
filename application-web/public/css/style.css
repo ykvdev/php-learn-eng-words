@@ -1,0 +1,46 @@
+.main-container {
+    width: 620px;
+    float: none;
+    margin: 85px auto;
+}
+
+.statistics-container {
+    width: 290px;
+    float: left;
+    padding-right: 20px;
+}
+
+.statistics-container .item {
+    margin-bottom: 10px;
+}
+
+.statistics-container .item .title {
+    float: left;
+}
+
+.statistics-container .item .value {
+    float: right
+}
+
+.word-container {
+    width: 290px;
+    text-align: center;
+    float: right;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.word-container .word {
+    margin-top: 0;
+    font-family: serif;
+}
+
+.word-container form#task-mouse-type button {
+    display: inline-block;
+    margin-bottom: 3px;
+    font-family: serif;
+}
+
+.word-progress-container canvas {
+    margin-bottom: -1px;
+}

@@ -1,0 +1,52 @@
+<div class="well main-container">
+    <?= fm()->display(); ?>
+
+    <div class="statistics-container">
+        <div class="item">
+            <div class="title">
+                <span class="glyphicon glyphicon-book"></span>
+                Осталось слов в словаре:
+            </div>
+            <div class="value"><?= $this->waitWordsCount ?></div>
+            <br style="clear: both">
+        </div>
+        <div class="item">
+            <div class="title">
+                <span class="glyphicon glyphicon-play-circle"></span>
+                Сегодня на изучении:
+            </div>
+            <div class="value"><?= $this->onLearnWordsCount ?></div>
+            <br style="clear: both">
+        </div>
+        <div class="item">
+            <div class="title">
+                <span class="glyphicon glyphicon-repeat"></span>
+                Сегодня на повторении:
+            </div>
+            <div class="value"><?= $this->onRepeatWordsCount ?></div>
+            <br style="clear: both">
+        </div>
+        <div class="item">
+            <div class="title">
+                <span class="glyphicon glyphicon-time"></span>
+                Завтра на повторение:
+            </div>
+            <div class="value"><?= $this->onRepeatTomorrowWordsCount ?></div>
+            <br style="clear: both">
+        </div>
+        <div class="item">
+            <div class="title">
+                <span class="glyphicon glyphicon-ok"></span>
+                Изучено слов:
+            </div>
+            <div class="value"><?= $this->learnedWordsCount ?></div>
+            <br style="clear: both">
+        </div>
+    </div>
+
+    <div class="word-container">
+        <?= view($this->taskViewAlias, $this) ?>
+    </div>
+
+    <br style="clear: both;">
+</div>

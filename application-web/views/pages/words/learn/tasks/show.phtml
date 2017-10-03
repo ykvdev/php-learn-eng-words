@@ -1,0 +1,17 @@
+<form method="post" id="task-show">
+    <h3 class="word"><?= $this->en ?> - <?= $this->ru ?>
+        <span class="word-progress-container">
+            <input type="text" value="<?= $this->wordProgress ?>" class="word-progress"
+                   data-width="20" data-height="20" data-displayInput="false" data-thickness="50" data-bgColor="#dddddd">
+        </span>
+    </h3>
+
+    <p>Запомните это слово</p><br>
+
+    <div class="btn-group">
+        <button type="submit" name="next" value="1" class="btn btn-primary"
+            >Запомнил <span class="badge">Enter</span></button>
+        <button type="submit" name="already_learned" value="1" class="btn btn-success"
+            >Уже знаю <span class="badge">Esc</span></button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<form method="post" id="task-select">
+    <h3 class="word">
+        <?php if($this->hintEn): ?>
+            <?= $this->hintEn ?> - <?= $this->hintRu ?>
+        <?php else: ?>
+            <?= $this->word ?>
+        <?php endif ?>
+
+        <span class="word-progress-container">
+            <input type="text" value="<?= $this->wordProgress ?>" class="word-progress"
+                   data-width="20" data-height="20" data-displayInput="false" data-thickness="50" data-bgColor="#dddddd">
+        </span>
+    </h3>
+    
+    <p>Выберите правильный<br> вариант перевода</p><br>
+
+    <div class="btn-group-vertical">
+        <?php for($i = 1; $i <= 5; $i++):
+            if(!isset($this->words[$i - 1])) continue; ?>
+            <button type="submit" name="answer" class="btn btn-primary"
+                    value="<?= $this->words[$i - 1] ?>"><?= $this->words[$i - 1] ?> <span class="badge"><?= $i ?></span></button>
+        <?php endfor ?>
+        <button type="submit" name="hint" value="1" class="btn btn-info"
+            >Подсказка <span class="badge">F1</span></button>
+        <button type="submit" name="already_learned" value="1" class="btn btn-success"
+            >Уже знаю <span class="badge">Esc</span></button>
+    </div>
+</form>

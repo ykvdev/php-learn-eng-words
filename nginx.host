@@ -1,0 +1,36 @@
+server {
+    set $env testing;
+
+    listen 80;
+
+    root /var/www/eng-learn-words/application-web/public;
+
+    server_name test.eng;
+
+    index index.php;
+
+    location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|pdf|ppt|txt|bmp|rtf|js)$ {
+        access_log off;
+        expires max;
+    }
+
+    location ~ \.php$ {
+        expires off;
+
+        default_type text/html; charset utf-8;
+
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $request_filename;
+        fastcgi_param APPLICATION_ENV $env;
+        include fastcgi_params;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}

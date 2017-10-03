@@ -1,0 +1,30 @@
+<form method="post" id="task-mouse-type">
+    <h3 class="word">
+        <?php if($this->hintEn): ?>
+            <?= $this->hintEn ?> - <?= $this->hintRu ?>
+        <?php else: ?>
+            <?= $this->ru . ($this->typedEnWord ? " - {$this->typedEnWord}" : '') ?>
+        <?php endif ?>
+
+        <span class="word-progress-container">
+            <input type="text" value="<?= $this->wordProgress ?>" class="word-progress"
+                   data-width="20" data-height="20" data-displayInput="false" data-thickness="50" data-bgColor="#dddddd">
+        </span>
+    </h3>
+
+    <p>Наберите перевод используя экранную клавиатуру, или клавиатуру компьютера</p><br>
+
+    <?php foreach($this->enLetters as $letter):
+        $letter = $letter == ' ' ? '&nbsp;' : $letter ?>
+        <button type="submit" name="answer_letter" class="btn btn-primary"
+                value="<?= $letter ?>"><?= $letter ?></button>
+    <?php endforeach ?>
+    <br><br>
+
+    <div class="btn-group">
+        <button type="submit" name="hint" value="1" class="btn btn-info"
+            >Подсказка <span class="badge">F1</span></button>
+        <button type="submit" name="already_learned" value="1" class="btn btn-success"
+            >Уже знаю <span class="badge">Esc</span></button>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+<form method="post" id="task-keyboard-type">
+    <h3 class="word">
+        <?php if($this->hintEn): ?>
+            <?= $this->hintEn ?> - <?= $this->hintRu ?>
+        <?php else: ?>
+            <?= $this->ru ?>
+        <?php endif ?>
+
+        <span class="word-progress-container">
+            <input type="text" value="<?= $this->wordProgress ?>" class="word-progress"
+                   data-width="20" data-height="20" data-displayInput="false" data-thickness="50" data-bgColor="#dddddd">
+        </span>
+    </h3>
+
+    <p>Наберите перевод используя клавиатуру компьютера</p><br>
+
+    <input type="text" name="answer" class="form-control" autocomplete="off"><br>
+
+    <div class="btn-group">
+        <button type="submit" name="hint" value="1" class="btn btn-info"
+            >Подсказка <span class="badge">F1</span></button>
+        <button type="submit" name="check" value="1" class="btn btn-success"
+            >Проверить <span class="badge">Enter</span></button>
+    </div>
+</form>
