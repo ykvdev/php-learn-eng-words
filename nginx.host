@@ -3,7 +3,7 @@ server {
 
     listen 80;
 
-    root /var/www/eng-learn-words/application-web/public;
+    root /var/www/php_learn_eng_words/application-web/public;
 
     server_name test.eng;
 
